@@ -1,0 +1,70 @@
+<div class="invoice-wrapper" id="print-section">
+  <div class="invoice-vertical" *ngFor="let data of invoicedata">
+
+    <!-- Header -->
+    <div class="v-header">
+      <h2>Parking Invoice</h2>
+      <p>{{ data.parking_lot_name }}</p>
+      <span>{{ data.main_org_name }}</span>
+    </div>
+
+    <!-- Info Blocks -->
+    <div class="v-section">
+      <div class="row">
+        <span>Invoice No</span>
+        <strong>{{ data.invid }}</strong>
+      </div>
+      <div class="row">
+        <span>Invoice Date</span>
+        <strong>{{ data.invdate }}</strong>
+      </div>
+    </div>
+
+    <div class="v-section">
+      <div class="row">
+        <span>Vehicle No</span>
+        <strong>{{ data.vehno }}</strong>
+      </div>
+      <div class="row">
+        <span>Vehicle Type</span>
+        <strong>{{ data.vehtype }}</strong>
+      </div>
+    </div>
+
+    <div class="v-section">
+      <div class="row">
+        <span>Entry Time</span>
+        <strong>{{ data.startdate }}</strong>
+      </div>
+      <div class="row">
+        <span>Exit Time</span>
+        <strong>{{ data.enddate }}</strong>
+      </div>
+    </div>
+
+    <!-- Amounts -->
+    <div class="v-section amount">
+      <div class="row">
+        <span>Paid Amount</span>
+        <strong>₹{{ data.advamount }}</strong>
+      </div>
+      <div class="row">
+        <span>Balance</span>
+        <strong>₹{{ data.balamount }}</strong>
+      </div>
+    </div>
+
+    <!-- Total -->
+    <div class="v-total">
+      <span>Total</span>
+      <strong>₹{{ data.total_collection }}</strong>
+    </div>
+
+    <!-- Footer -->
+    <div class="v-footer">
+      <p>Thank you! Drive safe </p>
+      <small>Inclusive of GST & other taxes</small>
+    </div>
+
+  </div>
+</div>
